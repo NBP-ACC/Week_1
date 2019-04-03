@@ -1,7 +1,7 @@
 # Introduction to Git / GitHub
 
 For your assignments you will work in groups of 3-4 people using GitHub Classroom. Therefore we will give you a **brief** introduction to Git / GitHub that you can start right away.
-If you are interested in learning more about Git / GitHub there are several good tutorials that you can watch in addition (e.g. http://swcarpentry.github.io/git-novice/).
+If you are interested in learning more about Git / GitHub there are several good tutorials that you can watch in addition.
 
 ## 1. Install git and create a github account (if you haven't done yet)
 
@@ -35,52 +35,83 @@ git config --global user.email "[email address]"
 
 ## 2. Workflow
 
-![](git.png)
+<img src="overview.png" alt="drawing" width="450"/>
 
-### 2.1 Checkout a project
+### 2.1 Checkout a repository
 
 You can clone your repository on GitHub to create a local copy on your computer and sync between the two locations. Repositories consist of a collection of all files and the history of those files.
 
-1. On GitHub navigate to the main page of the repository.
-2. Under the repository name, click Clone or download.
-3. In the Clone with HTTPs section, copy the clone URL for the
-repository.
-4. Open terminal.
+1. On GitHub copy clone URL for the repository.
+2. Open terminal.
 5. Change the current working directory to the location where you want the cloned directory to be made.
 6. Type `git clone`, and then paste the URL you copied in Step 2.
    ```sh
-   git clone https://github.com/...
+   git clone <URL>
    ```
+<div class="page-break" />
 
-### 2.2 Staging and Committing the code
+### 2.2 Staging and Committing code
 
-Committing is the process in which the code is added to the local repository. Before committing the code, it has to be in the staging area. The staging area is there to keep track of all the files which are to be committed.
-Any file which is not added to the staging area will not be committed. This gives the developer control over which files need to be committed.
+For staging a certain modified file or to stage all changes inside your project folder use:
 
-Use the following commands for staging a certain file or all files inside your project folder:
 ```sh
 git add <file>
-git add .
+git add -A
 ```
 
-Use the following command to commit staged files to the local repository with a commit message. Enter a relevant commit message to indicate what code changes were done in that particular commit:
+For committing staged files to the local repository with a commit message use:
+
 ```sh
 git commit -m "commit message"
 ```
 
-Alternatively you can directly commit all modified files to the local repository with a commit message:
+Alternatively you can directly commit all changes to the local repository with a commit message:
+
 ```sh
 git commit -a -m "commit message"
 ```
+Enter a relevant commit message to indicate what code changes were done in that particular commit!
 
 ### 2.3 Pushing and Pulling
 
-In order to push all the code from the local repository into the remote repository, use the following command:
+In order to push all the code from the local repository into the remote repository use:
+
 ```sh
 git push <remote> <branch>
 ```
 
-In order to pull the latest changes from the remote repository into the local repository, use the following command:
+In order to pull the latest changes from the remote repository into the local repository use:
+
 ```sh
 git pull <remote> <branch>
 ```
+
+page-break
+### 2.4 Branching and Merging
+
+Multiple branches are needed to support multiple parallel developments. This will be an important part when working on your homework.
+
+<img src="branching.png" alt="drawing" width="200"/>
+
+To create a new branch based upon your current HEAD branch use:
+
+```sh
+git branch <new-branch>
+```
+
+After creating a new branch you have to switch to it (since you are still in the master branch):
+
+```sh
+git checkout <new-branch>
+```
+
+After committing some changes to the new branch all the code in the new branch can be brought back to the master branch using:
+
+```sh
+git checkout master
+git merge <new-branch>
+```
+
+At best there are no conflicts after merging, but you will run sooner or later into conflicts when a merge is being done.
+
+Resolving the conflict is something which comes with experience, so as you work more with Git you will be able to get the hang of resolving conflicts.
