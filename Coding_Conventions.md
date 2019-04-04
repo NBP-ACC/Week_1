@@ -120,7 +120,7 @@ There's several types of comments:
 
 1. You use **block comments** to explain code that is more complex or unfamiliar to others. They are usually a bit longer and apply to some or all of the code that follows. Block comments are indented at the same level as the code. Each line of a block comment begins with the hashtag `#` and a single space. If you need to use more than one paragraph, they should be separated by a line that contains a single `#`.  
 
-2. **Inline comments** should be used that often. Sometimes they might help you to remember what a specific line of code means. Use inline comments on the same line of a statement, following the code itself, they also start with `#` and a single space.
+2. **Inline comments** should not be used that often. Sometimes they might help you to remember what a specific line of code means. Use inline comments on the same line of a statement, following the code itself, they also start with `#` and a single space.
 ```python 
 counter = 0  # initialize the counter
 ```
