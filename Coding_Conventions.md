@@ -1,3 +1,9 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+---
 # Python Coding Convetions. 
 
 > **"Your code is read much more often than it is written."** 
